@@ -44,6 +44,15 @@ $(".next-slide").click(() => {
     showSlides();
 });
 
+$(".slides li").each((k,v) => {
+    $(v).on("click", () => {
+        if($(v).hasClass("boop")) {$(v).removeClass("boop");}
+        setTimeout(() => {
+            $(v).addClass("boop");
+        }, 1);
+    });
+});
+
 //Mobile - not working :(
 $(".slider-container").on("swipeleft", (e) => {
     $(".prev-slide").click();
